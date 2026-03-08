@@ -1,11 +1,10 @@
 # credimercuri
-servicios finacieros 
-<!DOCTYPE html>
+SERVICIOS FINACIEROS
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Credimercuri - Préstamos Personales en Villa Dolores | WhatsApp</title>
+<title>Credimercuri - Préstamos Personales en Villa Dolores | Encuesta</title>
 <meta name="description" content="Préstamos personales en 24hs para jubilados, pensionados, pensiones no contributivas y empleados en Villa Dolores, Córdoba. Hipólito Yrigoyen 655.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -140,10 +139,7 @@ max-width: 1200px;
 margin: 0 auto;
 position: relative;
 z-index: 2;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 60px;
-align-items: center;
+text-align: center;
 }
 
 .hero-text h1 {
@@ -162,12 +158,16 @@ font-size: 20px;
 opacity: 0.95;
 margin-bottom: 32px;
 line-height: 1.6;
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
 }
 
 .hero-features {
 display: flex;
-flex-direction: column;
-gap: 16px;
+justify-content: center;
+flex-wrap: wrap;
+gap: 24px;
 margin-bottom: 40px;
 }
 
@@ -175,7 +175,11 @@ margin-bottom: 40px;
 display: flex;
 align-items: center;
 gap: 12px;
-font-size: 18px;
+font-size: 16px;
+background: rgba(255,255,255,0.1);
+padding: 12px 20px;
+border-radius: 50px;
+backdrop-filter: blur(10px);
 }
 
 .hero-feature-icon {
@@ -190,148 +194,300 @@ font-size: 16px;
 flex-shrink: 0;
 }
 
-.hero-cta {
-display: flex;
-flex-direction: column;
-gap: 16px;
+/* SURVEY SECTION - NUEVA */
+.survey-section {
+padding: 60px 20px;
+background: var(--bg);
 }
 
-.btn-whatsapp-large {
-background: var(--whatsapp);
-color: var(--white);
-padding: 20px 40px;
-border-radius: 16px;
-text-decoration: none;
-font-size: 20px;
-font-weight: 700;
-display: inline-flex;
-align-items: center;
+.survey-container {
+max-width: 800px;
+margin: 0 auto;
+background: var(--white);
+border-radius: 24px;
+padding: 40px;
+box-shadow: var(--shadow-strong);
+border: 2px solid var(--secondary);
+}
+
+.survey-header {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.survey-header h2 {
+font-size: 32px;
+color: var(--primary);
+margin-bottom: 12px;
+}
+
+.survey-header p {
+color: var(--text-light);
+font-size: 16px;
+}
+
+.survey-progress {
+display: flex;
 justify-content: center;
-gap: 12px;
+gap: 8px;
+margin-bottom: 40px;
+}
+
+.progress-dot {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background: #e0e0e0;
 transition: all 0.3s;
-box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+}
+
+.progress-dot.active {
+background: var(--secondary);
+transform: scale(1.2);
+}
+
+.progress-dot.completed {
+background: var(--whatsapp);
+}
+
+.survey-step {
+display: none;
+}
+
+.survey-step.active {
+display: block;
+animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.question-title {
+font-size: 24px;
+font-weight: 700;
+color: var(--primary);
+margin-bottom: 24px;
+text-align: center;
+}
+
+.question-subtitle {
+font-size: 16px;
+color: var(--text-light);
+margin-bottom: 32px;
+text-align: center;
+}
+
+.options-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 16px;
+margin-bottom: 32px;
+}
+
+.option-card {
+background: var(--bg);
+border: 2px solid transparent;
+border-radius: 16px;
+padding: 24px;
+cursor: pointer;
+transition: all 0.3s;
+text-align: center;
+}
+
+.option-card:hover {
+border-color: var(--secondary);
+transform: translateY(-4px);
+box-shadow: var(--shadow);
+}
+
+.option-card.selected {
+background: linear-gradient(135deg, var(--primary), var(--secondary));
+color: white;
+border-color: var(--primary);
+}
+
+.option-icon {
+font-size: 40px;
+margin-bottom: 12px;
+}
+
+.option-label {
+font-size: 16px;
+font-weight: 600;
+}
+
+.option-hint {
+font-size: 13px;
+opacity: 0.8;
+margin-top: 4px;
+}
+
+.input-group {
+margin-bottom: 24px;
+}
+
+.input-group label {
+display: block;
+font-weight: 600;
+color: var(--primary);
+margin-bottom: 8px;
+font-size: 16px;
+}
+
+.input-group input,
+.input-group select {
+width: 100%;
+padding: 16px;
+border: 2px solid #e0e0e0;
+border-radius: 12px;
+font-size: 16px;
+transition: border-color 0.3s;
+font-family: inherit;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+outline: none;
+border-color: var(--secondary);
+}
+
+.input-hint {
+font-size: 13px;
+color: var(--text-light);
+margin-top: 6px;
+}
+
+.amount-display {
+background: linear-gradient(135deg, var(--accent), #ffecb3);
+color: var(--primary-dark);
+padding: 20px;
+border-radius: 16px;
+text-align: center;
+margin: 24px 0;
+}
+
+.amount-display h4 {
+font-size: 14px;
+margin-bottom: 8px;
+opacity: 0.9;
+}
+
+.amount-display .amount {
+font-size: 36px;
+font-weight: 800;
+}
+
+.survey-buttons {
+display: flex;
+gap: 16px;
+justify-content: center;
+margin-top: 32px;
+}
+
+.btn-survey {
+padding: 16px 32px;
+border-radius: 12px;
+border: none;
+font-size: 16px;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.3s;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.btn-primary {
+background: var(--primary);
+color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+background: var(--primary-dark);
+transform: translateY(-2px);
+}
+
+.btn-primary:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+.btn-secondary {
+background: var(--bg);
+color: var(--text);
+}
+
+.btn-secondary:hover {
+background: #e0e0e0;
+}
+
+.btn-whatsapp {
+background: var(--whatsapp);
+color: white;
+font-size: 18px;
+padding: 20px 40px;
 animation: pulse-whatsapp 2s infinite;
 }
 
 @keyframes pulse-whatsapp {
-0%, 100% { transform: scale(1); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
-50% { transform: scale(1.02); box-shadow: 0 12px 40px rgba(37,211,102,0.7); }
+0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+50% { transform: scale(1.02); box-shadow: 0 6px 30px rgba(37,211,102,0.6); }
 }
 
-.btn-whatsapp-large:hover {
-transform: translateY(-3px);
-box-shadow: 0 12px 40px rgba(37,211,102,0.6);
-}
-
-.btn-secondary {
-background: rgba(255,255,255,0.2);
-backdrop-filter: blur(10px);
-color: var(--white);
-padding: 16px 32px;
-border-radius: 12px;
-text-decoration: none;
-font-weight: 600;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
-transition: all 0.3s;
-border: 2px solid rgba(255,255,255,0.3);
-}
-
-.btn-secondary:hover {
-background: rgba(255,255,255,0.3);
-}
-
-.hero-phone {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.phone-mockup {
-width: 300px;
-height: 600px;
-background: var(--white);
-border-radius: 40px;
-padding: 20px;
-box-shadow: var(--shadow-strong);
-position: relative;
-overflow: hidden;
-}
-
-.phone-screen {
-width: 100%;
-height: 100%;
-background: linear-gradient(180deg, #f0f0f0 0%, #ffffff 100%);
-border-radius: 30px;
-padding: 20px;
-display: flex;
-flex-direction: column;
-}
-
-.phone-header {
-display: flex;
-align-items: center;
-gap: 10px;
-margin-bottom: 20px;
-}
-
-.phone-avatar {
-width: 50px;
-height: 50px;
-background: linear-gradient(135deg, var(--primary), var(--secondary));
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 24px;
-}
-
-.phone-chat {
-flex: 1;
-display: flex;
-flex-direction: column;
-gap: 12px;
-}
-
-.chat-bubble {
-background: var(--whatsapp);
-color: white;
-padding: 12px 16px;
+.summary-box {
+background: linear-gradient(135deg, #f5f5f5, #fafafa);
 border-radius: 16px;
-border-bottom-left-radius: 4px;
+padding: 24px;
+margin-bottom: 24px;
+}
+
+.summary-item {
+display: flex;
+justify-content: space-between;
+padding: 12px 0;
+border-bottom: 1px solid #e0e0e0;
+}
+
+.summary-item:last-child {
+border-bottom: none;
+}
+
+.summary-label {
+color: var(--text-light);
 font-size: 14px;
-max-width: 80%;
-animation: message-pop 0.5s ease;
 }
 
-.chat-bubble:nth-child(2) {
-animation-delay: 0.3s;
-}
-
-.chat-bubble:nth-child(3) {
-animation-delay: 0.6s;
-}
-
-@keyframes message-pop {
-0% { opacity: 0; transform: translateY(10px); }
-100% { opacity: 1; transform: translateY(0); }
-}
-
-.phone-input {
-background: #f0f0f0;
-padding: 12px;
-border-radius: 24px;
-margin-top: auto;
+.summary-value {
+font-weight: 700;
+color: var(--primary);
 font-size: 14px;
-color: #999;
+}
+
+.eligibility-badge {
+display: inline-block;
+padding: 12px 24px;
+border-radius: 50px;
+font-weight: 700;
+font-size: 16px;
+margin-bottom: 24px;
+}
+
+.eligible {
+background: linear-gradient(135deg, #4caf50, #45a049);
+color: white;
+}
+
+.review {
+background: linear-gradient(135deg, #ff9800, #f57c00);
+color: white;
 }
 
 /* Services Section */
 .services {
 padding: 80px 20px;
-background: var(--bg);
+background: var(--white);
 }
 
 .container {
@@ -365,11 +521,10 @@ gap: 24px;
 }
 
 .service-card {
-background: var(--white);
+background: var(--bg);
 border-radius: 20px;
 padding: 32px;
 text-align: center;
-box-shadow: var(--shadow);
 transition: all 0.3s;
 border: 2px solid transparent;
 }
@@ -405,21 +560,10 @@ color: var(--text-light);
 line-height: 1.6;
 }
 
-.service-amount {
-display: inline-block;
-background: var(--accent);
-color: var(--primary-dark);
-padding: 8px 16px;
-border-radius: 20px;
-font-weight: 700;
-font-size: 14px;
-margin-top: 16px;
-}
-
 /* Process Section */
 .process {
 padding: 80px 20px;
-background: var(--white);
+background: var(--bg);
 }
 
 .process-steps {
@@ -471,92 +615,10 @@ font-size: 16px;
 color: var(--text-light);
 }
 
-/* Calculator Section */
-.calculator {
-padding: 80px 20px;
-background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-color: var(--white);
-}
-
-.calculator-content {
-max-width: 800px;
-margin: 0 auto;
-text-align: center;
-}
-
-.calculator h2 {
-font-size: 40px;
-font-weight: 800;
-margin-bottom: 16px;
-}
-
-.calculator > p {
-font-size: 18px;
-opacity: 0.9;
-margin-bottom: 40px;
-}
-
-.calc-form {
-background: rgba(255,255,255,0.1);
-backdrop-filter: blur(10px);
-border-radius: 24px;
-padding: 40px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 24px;
-}
-
-.calc-group {
-text-align: left;
-}
-
-.calc-group label {
-display: block;
-font-size: 14px;
-font-weight: 600;
-margin-bottom: 8px;
-opacity: 0.9;
-}
-
-.calc-group input,
-.calc-group select {
-width: 100%;
-padding: 16px;
-border-radius: 12px;
-border: none;
-font-size: 16px;
-background: rgba(255,255,255,0.9);
-color: var(--text);
-}
-
-.calc-result {
-grid-column: 1 / -1;
-background: var(--accent);
-color: var(--primary-dark);
-padding: 24px;
-border-radius: 16px;
-margin-top: 16px;
-}
-
-.calc-result h3 {
-font-size: 18px;
-margin-bottom: 8px;
-}
-
-.calc-amount {
-font-size: 36px;
-font-weight: 800;
-}
-
-.calc-cta {
-grid-column: 1 / -1;
-margin-top: 16px;
-}
-
 /* Testimonials */
 .testimonials {
 padding: 80px 20px;
-background: var(--bg);
+background: var(--white);
 }
 
 .testimonials-grid {
@@ -567,7 +629,7 @@ margin-top: 60px;
 }
 
 .testimonial-card {
-background: var(--white);
+background: var(--bg);
 border-radius: 20px;
 padding: 32px;
 box-shadow: var(--shadow);
@@ -588,7 +650,7 @@ border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
-font-size: 28px;
+font-size: 24px;
 color: white;
 font-weight: 700;
 }
@@ -620,7 +682,7 @@ font-style: italic;
 /* Location Section */
 .location {
 padding: 80px 20px;
-background: var(--white);
+background: var(--bg);
 }
 
 .location-content {
@@ -653,13 +715,14 @@ gap: 16px;
 .location-icon {
 width: 48px;
 height: 48px;
-background: var(--bg);
+background: var(--white);
 border-radius: 12px;
 display: flex;
 align-items: center;
 justify-content: center;
 font-size: 24px;
 flex-shrink: 0;
+box-shadow: var(--shadow);
 }
 
 .location-item div strong {
@@ -698,57 +761,6 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 box-shadow: 0 4px 20px rgba(255,87,34,0.4);
-}
-
-/* FAQ Section */
-.faq {
-padding: 80px 20px;
-background: var(--bg);
-}
-
-.faq-list {
-max-width: 800px;
-margin: 60px auto 0;
-}
-
-.faq-item {
-background: var(--white);
-border-radius: 16px;
-margin-bottom: 16px;
-overflow: hidden;
-box-shadow: var(--shadow);
-}
-
-.faq-question {
-padding: 24px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-cursor: pointer;
-font-weight: 600;
-font-size: 18px;
-color: var(--primary);
-}
-
-.faq-answer {
-padding: 0 24px 24px;
-color: var(--text-light);
-font-size: 16px;
-line-height: 1.7;
-display: none;
-}
-
-.faq-item.active .faq-answer {
-display: block;
-}
-
-.faq-icon {
-font-size: 24px;
-transition: transform 0.3s;
-}
-
-.faq-item.active .faq-icon {
-transform: rotate(180deg);
 }
 
 /* CTA Section */
@@ -921,123 +933,14 @@ opacity: 1;
 transform: translateX(0);
 }
 
-/* Modal */
-.modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.8);
-z-index: 10000;
-align-items: center;
-justify-content: center;
-padding: 20px;
-}
-
-.modal.active {
-display: flex;
-}
-
-.modal-content {
-background: var(--white);
-border-radius: 24px;
-padding: 40px;
-max-width: 500px;
-width: 100%;
-text-align: center;
-animation: slide-up 0.3s;
-}
-
-@keyframes slide-up {
-from { transform: translateY(50px); opacity: 0; }
-to { transform: translateY(0); opacity: 1; }
-}
-
-.modal-icon {
-width: 100px;
-height: 100px;
-background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 50px;
-margin: 0 auto 24px;
-color: white;
-animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-10px); }
-}
-
-.modal h3 {
-font-size: 28px;
-color: var(--primary);
-margin-bottom: 16px;
-}
-
-.modal p {
-color: var(--text-light);
-margin-bottom: 24px;
-font-size: 16px;
-}
-
-.modal-location {
-background: var(--bg);
-padding: 20px;
-border-radius: 16px;
-margin-bottom: 24px;
-text-align: left;
-}
-
-.modal-location strong {
-color: var(--primary);
-display: block;
-margin-bottom: 8px;
-}
-
-.modal-buttons {
-display: flex;
-gap: 12px;
-}
-
-.btn-modal {
-flex: 1;
-padding: 16px;
-border-radius: 12px;
-border: none;
-font-weight: 700;
-cursor: pointer;
-font-size: 16px;
-}
-
-.btn-modal-primary {
-background: var(--whatsapp);
-color: white;
-}
-
-.btn-modal-secondary {
-background: var(--bg);
-color: var(--text);
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
-.hero-content {
-grid-template-columns: 1fr;
-text-align: center;
-}
-
 .hero-text h1 {
 font-size: 40px;
 }
 
-.phone-mockup {
-display: none;
+.options-grid {
+grid-template-columns: 1fr;
 }
 
 .services-grid {
@@ -1082,11 +985,11 @@ padding: 120px 20px 60px;
 font-size: 32px;
 }
 
-.services-grid {
-grid-template-columns: 1fr;
+.survey-container {
+padding: 24px;
 }
 
-.calc-form {
+.services-grid {
 grid-template-columns: 1fr;
 }
 
@@ -1121,7 +1024,7 @@ display: none;
 <div class="header-contact">
 <a href="https://wa.me/543544313118?text=Hola%20Credimercuri,%20vi%20su%20web%20y%20quiero%20información%20sobre%20préstamos" class="header-whatsapp" target="_blank">
 <span>💬</span>
-<span>WhatsApp: +54 9 3544 31-3118</span>
+<span>WhatsApp</span>
 </a>
 </div>
 <div class="menu-toggle">☰</div>
@@ -1138,49 +1041,178 @@ display: none;
 <div class="hero-features">
 <div class="hero-feature">
 <div class="hero-feature-icon">⚡</div>
-<span>Aprobación en 24 horas hábiles</span>
+<span>Aprobación en 24hs</span>
 </div>
 <div class="hero-feature">
 <div class="hero-feature-icon">📍</div>
-<span>Local físico: Hipólito Yrigoyen 655, Villa Dolores</span>
+<span>Hipólito Yrigoyen 655</span>
 </div>
 <div class="hero-feature">
 <div class="hero-feature-icon">✓</div>
-<span>Sin garante para jubilados y pensionados</span>
+<span>Sin garante</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SURVEY SECTION - COMPLETAMENTE NUEVA -->
+<section class="survey-section" id="encuesta">
+<div class="survey-container">
+<div class="survey-header">
+<h2>📋 Verificá tu préstamo en 1 minuto</h2>
+<p>Respondé 4 preguntas y te diremos instantáneamente si calificás. Después te contactás por WhatsApp con los datos listos.</p>
+</div>
+
+<div class="survey-progress">
+<div class="progress-dot active" id="dot-1"></div>
+<div class="progress-dot" id="dot-2"></div>
+<div class="progress-dot" id="dot-3"></div>
+<div class="progress-dot" id="dot-4"></div>
+</div>
+
+<!-- STEP 1: Perfil -->
+<div class="survey-step active" id="step-1">
+<h3 class="question-title">¿Cuál es tu situación actual?</h3>
+<p class="question-subtitle">Seleccioná la opción que mejor te describa</p>
+
+<div class="options-grid">
+<div class="option-card" onclick="selectOption(this, 'perfil', 'jubilado')">
+<div class="option-icon">👴</div>
+<div class="option-label">Jubilado/a</div>
+<div class="option-hint">Anses o provincia</div>
+</div>
+<div class="option-card" onclick="selectOption(this, 'perfil', 'pensionado')">
+<div class="option-icon">👵</div>
+<div class="option-label">Pensionado/a</div>
+<div class="option-hint">Viudez o invalidez</div>
+</div>
+<div class="option-card" onclick="selectOption(this, 'perfil', 'nocontributiva')">
+<div class="option-icon">📝</div>
+<div class="option-label">Pensión No Contributiva</div>
+<div class="option-hint">Madres, veteranos, discapacidad</div>
+</div>
+<div class="option-card" onclick="selectOption(this, 'perfil', 'empleado')">
+<div class="option-icon">💼</div>
+<div class="option-label">Empleado/a</div>
+<div class="option-hint">Relación de dependencia</div>
 </div>
 </div>
 
-<div class="hero-cta">
-<a href="https://wa.me/543544313118?text=Hola%20Guille,%20vi%20la%20web%20de%20Credimercuri%20y%20quiero%20consultar%20por%20un%20préstamo" class="btn-whatsapp-large" target="_blank">
-<span>💬</span>
-<span>Consultar por WhatsApp</span>
-</a>
-<a href="#calculadora" class="btn-secondary">
-<span>🧮</span>
-<span>Simular mi préstamo</span>
-</a>
+<div class="survey-buttons">
+<button class="btn-survey btn-primary" onclick="nextStep(1)" disabled id="btn-step-1">
+Continuar →
+</button>
 </div>
 </div>
 
-<div class="hero-phone">
-<div class="phone-mockup">
-<div class="phone-screen">
-<div class="phone-header">
-<div class="phone-avatar">💰</div>
-<div>
-<div style="font-weight: 700;">Credimercuri</div>
-<div style="font-size: 12px; color: #666;">en línea</div>
+<!-- STEP 2: Banco -->
+<div class="survey-step" id="step-2">
+<h3 class="question-title">¿Dónde estás cobrando actualmente?</h3>
+<p class="question-subtitle">Seleccioná el banco o entidad donde te depositan</p>
+
+<div class="options-grid">
+<div class="option-card" onclick="selectOption(this, 'banco', 'Anses')">
+<div class="option-icon">🏛️</div>
+<div class="option-label">Anses</div>
+<div class="option-hint">Jubilaciones nacionales</div>
+</div>
+<div class="option-card" onclick="selectOption(this, 'banco', 'Banco Nación')">
+<div class="option-icon">🏦</div>
+<div class="option-label">Banco Nación</div>
+<div class="option-hint">Provincia de Córdoba</div>
+</div>
+<div class="option-card" onclick="selectOption(this, 'banco', 'Banco Provincia')">
+<div class="option-icon">🏛️</div>
+<div class="option-label">Banco Provincia</div>
+<div class="option-hint">Córdoba</div>
+</div>
+<div class="option-card" onclick="selectOption(this, 'banco', 'Banco Macro')">
+<div class="option-icon">🏦</div>
+<div class="option-label">Banco Macro</div>
+<div class="option-hint">Otro banco privado</div>
+</div>
+<div class="option-card" onclick="selectOption(this, 'banco', 'Caja de Jubilaciones')">
+<div class="option-icon">📮</div>
+<div class="option-label">Caja de Jubilaciones</div>
+<div class="option-hint">Provincial</div>
+</div>
+<div class="option-card" onclick="selectOption(this, 'banco', 'Otro')">
+<div class="option-icon">💳</div>
+<div class="option-label">Otro / No estoy seguro</div>
+<div class="option-hint">Te ayudamos a verificar</div>
 </div>
 </div>
-<div class="phone-chat">
-<div class="chat-bubble">¡Hola! Soy Guille 👋 ¿En qué puedo ayudarte?</div>
-<div class="chat-bubble">¿Necesitás un préstamo? Te pregunto un par de cosas y en 5 minutos te digo cuánto te puedo dar 📊</div>
-<div class="chat-bubble">Estamos en Hipólito Yrigoyen 655, Villa Dolores 📍</div>
+
+<div class="survey-buttons">
+<button class="btn-survey btn-secondary" onclick="prevStep(2)">← Volver</button>
+<button class="btn-survey btn-primary" onclick="nextStep(2)" disabled id="btn-step-2">
+Continuar →
+</button>
 </div>
-<div class="phone-input">Escribe un mensaje...</div>
+</div>
+
+<!-- STEP 3: Monto del recibo -->
+<div class="survey-step" id="step-3">
+<h3 class="question-title">¿Cuál es el monto de tu recibo?</h3>
+<p class="question-subtitle">Ingresá el monto bruto que figura en tu último recibo de sueldo, jubilación o pensión</p>
+
+<div class="input-group" style="max-width: 400px; margin: 0 auto;">
+<label>Monto del recibo (en pesos argentinos)</label>
+<input type="number" id="monto-recibo" placeholder="Ej: 185000" oninput="updateMontoRecibo(this.value)">
+<p class="input-hint">Sin puntos ni comas. Ejemplo: si cobrás $185.230, escribí 185230</p>
+</div>
+
+<div class="amount-display" id="monto-display" style="display: none;">
+<h4>Monto ingresado:</h4>
+<div class="amount" id="monto-formateado">$0</div>
+</div>
+
+<div class="survey-buttons">
+<button class="btn-survey btn-secondary" onclick="prevStep(3)">← Volver</button>
+<button class="btn-survey btn-primary" onclick="nextStep(3)" disabled id="btn-step-3">
+Continuar →
+</button>
 </div>
 </div>
+
+<!-- STEP 4: Cuánto le queda en mano -->
+<div class="survey-step" id="step-4">
+<h3 class="question-title">¿Cuánto te queda en mano?</h3>
+<p class="question-subtitle">Ingresá el monto neto que realmente recibís después de todos los descuentos</p>
+
+<div class="input-group" style="max-width: 400px; margin: 0 auto;">
+<label>Monto neto en mano (en pesos argentinos)</label>
+<input type="number" id="monto-mano" placeholder="Ej: 145000" oninput="updateMontoMano(this.value)">
+<p class="input-hint">Lo que realmente te queda para gastar después de descuentos</p>
 </div>
+
+<div class="amount-display" id="mano-display" style="display: none; background: linear-gradient(135deg, #e8f5e9, #c8e6c9);">
+<h4>Disponible mensual:</h4>
+<div class="amount" id="mano-formateado" style="color: #2e7d32;">$0</div>
+</div>
+
+<div style="background: #fff3e0; border-radius: 12px; padding: 16px; margin-top: 24px; text-align: center;">
+<p style="font-size: 14px; color: #e65100; margin: 0;">
+💡 <strong>Tip:</strong> Con este dato calculamos cuánto podés pagar cómodamente por mes
+</p>
+</div>
+
+<div class="survey-buttons">
+<button class="btn-survey btn-secondary" onclick="prevStep(4)">← Volver</button>
+<button class="btn-survey btn-primary" onclick="finishSurvey()" disabled id="btn-step-4">
+Ver resultado →
+</button>
+</div>
+</div>
+
+<!-- RESULT STEP -->
+<div class="survey-step" id="step-result">
+<div id="result-content">
+<!-- Se llena dinámicamente con JavaScript -->
+</div>
+</div>
+
 </div>
 </section>
 
@@ -1197,28 +1229,24 @@ display: none;
 <div class="service-icon">👴</div>
 <h3>Jubilados</h3>
 <p>Préstamos pensados para adultos mayores. Sin garante, cuotas que no superan el 30% de la jubilación.</p>
-<span class="service-amount">Hasta $500.000</span>
 </div>
 
 <div class="service-card">
 <div class="service-icon">👵</div>
 <h3>Pensionados</h3>
 <p>Aprobación garantizada para quienes cobran pensión. Entendemos que cada peso cuenta.</p>
-<span class="service-amount">Hasta $400.000</span>
 </div>
 
 <div class="service-card">
 <div class="service-icon">📝</div>
 <h3>Pensiones No Contributivas</h3>
-<p>Madres de 7 hijos, invalidez, veteranos: aprobamos donde otros dicen NO. Somos de los pocos en la zona.</p>
-<span class="service-amount">Hasta $200.000</span>
+<p>Madres de 7 hijos, invalidez, veteranos: aprobamos donde otros dicen NO.</p>
 </div>
 
 <div class="service-card">
 <div class="service-icon">💼</div>
 <h3>Empleados</h3>
-<p>Con o sin recibo de sueldo. Hasta 3 sueldos de préstamo. Aprobación express para emergencias.</p>
-<span class="service-amount">Hasta 3 sueldos</span>
+<p>Con o sin recibo de sueldo. Hasta 3 sueldos de préstamo. Aprobación express.</p>
 </div>
 </div>
 </div>
@@ -1236,73 +1264,19 @@ display: none;
 <div class="process-step">
 <div class="step-number">1</div>
 <h3>Vení con tu documentación</h3>
-<p>Solo necesitás DNI, último recibo de sueldo/jubilación y un servicio a tu nombre. Nada más.</p>
+<p>Solo necesitás DNI, último recibo de sueldo/jubilación y un servicio a tu nombre.</p>
 </div>
 
 <div class="process-step">
 <div class="step-number">2</div>
 <h3>Evaluamos en el momento</h3>
-<p>Analizamos tu situación en el acto. Sin esperar días ni semanas. Te damos respuesta inmediata.</p>
+<p>Analizamos tu situación en el acto. Sin esperar días ni semanas.</p>
 </div>
 
 <div class="process-step">
 <div class="step-number">3</div>
 <h3>En 24hs tenés la plata</h3>
-<p>Una vez aprobado, en 24 horas hábiles tenés el dinero en efectivo o transferencia. Garantizado.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Calculator Section -->
-<section class="calculator" id="calculadora">
-<div class="calculator-content">
-<h2>🧮 Simulá tu préstamo</h2>
-<p>Ingresá tus datos y calculá cuánto podés recibir y cuánto pagarías por mes.</p>
-
-<div class="calc-form">
-<div class="calc-group">
-<label>¿Qué perfil te describe?</label>
-<select id="perfil">
-<option value="jubilado">Jubilado/a</option>
-<option value="pensionado">Pensionado/a</option>
-<option value="nocontributiva">Pensión No Contributiva</option>
-<option value="empleado">Empleado/a</option>
-</select>
-</div>
-
-<div class="calc-group">
-<label>¿Cuál es tu ingreso mensual aproximado?</label>
-<input type="number" id="ingreso" placeholder="Ej: 150000" oninput="calcular()">
-</div>
-
-<div class="calc-group">
-<label>¿Cuánto necesitás?</label>
-<input type="number" id="monto" placeholder="Ej: 100000" oninput="calcular()">
-</div>
-
-<div class="calc-group">
-<label>¿En cuántas cuotas?</label>
-<select id="cuotas" onchange="calcular()">
-<option value="3">3 cuotas</option>
-<option value="6">6 cuotas</option>
-<option value="12" selected>12 cuotas</option>
-<option value="18">18 cuotas</option>
-<option value="24">24 cuotas</option>
-</select>
-</div>
-
-<div class="calc-result" id="resultado" style="display: none;">
-<h3>Cuota mensual estimada:</h3>
-<div class="calc-amount" id="cuotaMensual">$0</div>
-<p style="font-size: 14px; margin-top: 8px; opacity: 0.9;">*Esta es una estimación. La tasa final depende de tu perfil crediticio.</p>
-</div>
-
-<div class="calc-cta">
-<a href="https://wa.me/543544313118?text=Hola%20Guille,%20usé%20la%20calculadora%20y%20quiero%20consultar%20por%20un%20préstamo" class="btn-whatsapp-large" target="_blank" style="width: 100%;">
-<span>💬</span>
-<span>Consultar por este préstamo</span>
-</a>
+<p>Una vez aprobado, en 24 horas hábiles tenés el dinero.</p>
 </div>
 </div>
 </div>
@@ -1313,7 +1287,7 @@ display: none;
 <div class="container">
 <div class="section-header">
 <h2>Lo que dicen nuestros clientes</h2>
-<p>Historias reales de vecinos de Villa Dolores y la zona que confiaron en nosotros.</p>
+<p>Historias reales de vecinos de Villa Dolores y la zona.</p>
 </div>
 
 <div class="testimonials-grid">
@@ -1322,11 +1296,11 @@ display: none;
 <div class="testimonial-avatar">MR</div>
 <div class="testimonial-info">
 <h4>María R.</h4>
-<span>Jubilada, 68 años • Villa Dolores</span>
+<span>Jubilada • Villa Dolores</span>
 </div>
 </div>
 <div class="stars">★★★★★</div>
-<p class="testimonial-text">"Mi banco me dijo que no por mi edad. Vine a Credimercuri y en 2 días tenía la plata para arreglar el techo de mi casa. Guille me trató con respeto, nunca me sentí discriminada."</p>
+<p class="testimonial-text">"Mi banco me dijo que no por mi edad. Vine a Credimercuri y en 2 días tenía la plata. Guille me trató con respeto."</p>
 </div>
 
 <div class="testimonial-card">
@@ -1334,11 +1308,11 @@ display: none;
 <div class="testimonial-avatar" style="background: linear-gradient(135deg, #9c27b0, #e91e63);">JL</div>
 <div class="testimonial-info">
 <h4>José L.</h4>
-<span>Pensión No Contributiva • Villa Dolores</span>
+<span>Pensión No Contributiva</span>
 </div>
 </div>
 <div class="stars">★★★★★</div>
-<p class="testimonial-text">"Cobro pensión por discapacidad y en todos lados me rechazaban. Guille fue el único que me dio una oportunidad. Hoy pude comprar la silla de ruedas que necesitaba. Eternamente agradecido."</p>
+<p class="testimonial-text">"Cobro pensión por discapacidad y en todos lados me rechazaban. Guille fue el único que me dio una oportunidad."</p>
 </div>
 
 <div class="testimonial-card">
@@ -1350,7 +1324,7 @@ display: none;
 </div>
 </div>
 <div class="stars">★★★★★</div>
-<p class="testimonial-text">"Se me rompió el auto y lo necesitaba para trabajar. Guille me aprobó el préstamo en el día. La cuota me quedó justa con mi sueldo. Muy recomendable, gente de palabra."</p>
+<p class="testimonial-text">"Se me rompió el auto y lo necesitaba para trabajar. Guille me aprobó el préstamo en el día. Gente de palabra."</p>
 </div>
 </div>
 </div>
@@ -1362,9 +1336,8 @@ display: none;
 <div class="location-content">
 <div class="location-info">
 <h2>Vení a conocernos</h2>
-<p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.7;">
-Tenemos local físico en el centro de Villa Dolores. Atendemos con la cara visible,
-porque creemos en las relaciones de confianza vecino a vecino.
+<p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px;">
+Local físico en el centro de Villa Dolores. Atendemos con la cara visible.
 </p>
 
 <div class="location-details">
@@ -1373,41 +1346,25 @@ porque creemos en las relaciones de confianza vecino a vecino.
 <div>
 <strong>Dirección</strong>
 <span>Hipólito Yrigoyen 655, Villa Dolores, Córdoba</span>
-<span style="display: block; margin-top: 4px; color: var(--secondary); font-size: 14px;">A 2 cuadras de la plaza principal</span>
 </div>
 </div>
 
 <div class="location-item">
 <div class="location-icon">🕐</div>
 <div>
-<strong>Horario de atención</strong>
+<strong>Horario</strong>
 <span>Lunes a Viernes: 9:00 a 18:00 hs</span>
-<span style="display: block; color: var(--text-light);">Sábados: Con cita previa</span>
 </div>
 </div>
 
 <div class="location-item">
 <div class="location-icon">📱</div>
 <div>
-<strong>Contacto directo</strong>
-<span>WhatsApp: +54 9 3544 31-3118</span>
-<span style="display: block; color: var(--text-light);">Respondemos en minutos</span>
-</div>
-</div>
-
-<div class="location-item">
-<div class="location-icon">♿</div>
-<div>
-<strong>Accesibilidad</strong>
-<span>Local en planta baja con acceso para adultos mayores</span>
+<strong>WhatsApp</strong>
+<span>+54 9 3544 31-3118</span>
 </div>
 </div>
 </div>
-
-<a href="https://wa.me/543544313118?text=Hola%20Guille,%20quiero%20pasar%20por%20el%20local%20de%20Hipólito%20Yrigoyen%20655" class="btn-whatsapp-large" target="_blank" style="margin-top: 20px;">
-<span>💬</span>
-<span>Agendar visita por WhatsApp</span>
-</a>
 </div>
 
 <div class="location-map">
@@ -1418,79 +1375,14 @@ porque creemos en las relaciones de confianza vecino a vecino.
 </div>
 </section>
 
-<!-- FAQ Section -->
-<section class="faq">
-<div class="container">
-<div class="section-header">
-<h2>Preguntas frecuentes</h2>
-<p>Respuestas claras a las dudas más comunes. Si no encontrás lo que buscás, escribinos.</p>
-</div>
-
-<div class="faq-list">
-<div class="faq-item">
-<div class="faq-question" onclick="toggleFaq(this)">
-<span>¿Necesito tener garante o propiedad?</span>
-<span class="faq-icon">▼</span>
-</div>
-<div class="faq-answer">
-No. Para jubilados, pensionados y pensiones no contributivas no pedimos garante ni propiedad. Para empleados, dependiendo del monto, puede ser necesario. Cada caso se evalúa individualmente con la flexibilidad que nos caracteriza.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question" onclick="toggleFaq(this)">
-<span>¿Puedo pedir un préstamo si estoy en Veraz o tengo deudas?</span>
-<span class="faq-icon">▼</span>
-</div>
-<div class="faq-answer">
-Sí. Entendemos que muchas veces las deudas surgen de situaciones de emergencia. Evaluamos tu capacidad de pago actual, no solo tu historial pasado. Vení y charlamos, encontramos una solución.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question" onclick="toggleFaq(this)">
-<span>¿Cuánto tarda realmente la aprobación?</span>
-<span class="faq-icon">▼</span>
-</div>
-<div class="faq-answer">
-La evaluación es inmediata, en el momento que venís con tu documentación. Una vez aprobado, el desembolso (que tengas la plata) es en 24 horas hábiles. Si venís un lunes antes de las 12, el martes tenés la plata.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question" onclick="toggleFaq(this)">
-<span>¿Puedo cancelar el préstamo anticipado?</span>
-<span class="faq-icon">▼</span>
-</div>
-<div class="faq-answer">
-Sí, podés cancelar en cualquier momento sin penalidades. Incluso si pagás la mitad y querés refinanciar el resto, lo conversamos. Queremos que te sientas cómodo, no atrapado.
-</div>
-</div>
-
-<div class="faq-item">
-<div class="faq-question" onclick="toggleFaq(this)">
-<span>¿Atienden solo en Villa Dolores o también en otras zonas?</span>
-<span class="faq-icon">▼</span>
-</div>
-<div class="faq-answer">
-Nuestro local está en Villa Dolores (Hipólito Yrigoyen 655), pero atendemos clientes de todo el Valle de Traslasierra: Mina Clavero, Nono, Los Hornillos, San Javier, y la ciudad de Córdoba. Para zonas lejanas, podemos hacer evaluación online y coordinar entrega.
-</div>
-</div>
-</div>
-</div>
-</section>
-
 <!-- CTA Section -->
 <section class="cta-section">
 <h2>¿Listo para solucionar tu situación?</h2>
-<p>No esperes más. Escribime ahora por WhatsApp y en 5 minutos te digo cuánto puedo ayudarte. Sin compromiso, sin costo de consulta.</p>
-<a href="https://wa.me/543544313118?text=Hola%20Guille,%20vi%20la%20web%20y%20quiero%20consultar%20por%20un%20préstamo" class="btn-cta-mega" target="_blank">
+<p>No esperes más. Escribime ahora por WhatsApp y en 5 minutos te digo cuánto puedo ayudarte.</p>
+<a href="https://wa.me/543544313118?text=Hola%20Guille,%20completé%20la%20encuesta%20en%20la%20web%20y%20quiero%20consultar" class="btn-cta-mega" target="_blank">
 <span>💬</span>
 <span>Escribir por WhatsApp ahora</span>
 </a>
-<p style="margin-top: 24px; font-size: 16px; opacity: 0.9;">
-📱 +54 9 3544 31-3118 • Guille te responde personalmente
-</p>
 </section>
 
 <!-- Footer -->
@@ -1498,7 +1390,7 @@ Nuestro local está en Villa Dolores (Hipólito Yrigoyen 655), pero atendemos cl
 <div class="footer-content">
 <div class="footer-brand">
 <h3>💰 Credimercuri</h3>
-<p>Préstamos personales con respaldo humano. Más de 10 años ayudando a vecinos de Villa Dolores y el Valle de Traslasierra a salir adelante.</p>
+<p>Préstamos personales con respaldo humano. Más de 10 años en Villa Dolores.</p>
 <a href="https://wa.me/543544313118" class="footer-whatsapp" target="_blank">
 <span>💬</span>
 <span>+54 9 3544 31-3118</span>
@@ -1508,20 +1400,19 @@ Nuestro local está en Villa Dolores (Hipólito Yrigoyen 655), pero atendemos cl
 <div class="footer-column">
 <h4>Servicios</h4>
 <ul>
-<li><a href="#">Préstamos para Jubilados</a></li>
-<li><a href="#">Préstamos para Pensionados</a></li>
+<li><a href="#">Jubilados</a></li>
+<li><a href="#">Pensionados</a></li>
 <li><a href="#">Pensiones No Contributivas</a></li>
-<li><a href="#">Préstamos para Empleados</a></li>
+<li><a href="#">Empleados</a></li>
 </ul>
 </div>
 
 <div class="footer-column">
 <h4>Enlaces</h4>
 <ul>
-<li><a href="#">Simulador de préstamos</a></li>
-<li><a href="#">Preguntas frecuentes</a></li>
-<li><a href="#">Testimonios</a></li>
+<li><a href="#encuesta">Verificar préstamo</a></li>
 <li><a href="#">Cómo llegar</a></li>
+<li><a href="#">Testimonios</a></li>
 </ul>
 </div>
 
@@ -1529,4 +1420,110 @@ Nuestro local está en Villa Dolores (Hipólito Yrigoyen 655), pero atendemos cl
 <h4>Legal</h4>
 <ul>
 <li><a href="#">Términos y condiciones</a></li>
+<li><a href="#">Privacidad</a></li>
+</ul>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>© 2024 Credimercuri - Hipólito Yrigoyen 655, Villa Dolores, Córdoba</p>
+</div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/543544313118?text=Hola%20Guille,%20vi%20la%20web%20y%20quiero%20consultar" class="whatsapp-float" target="_blank">
+💬
+<span class="whatsapp-tooltip">¡Escribime ahora!</span>
+</a>
+
+<script>
+// Survey State
+let surveyData = {
+perfil: '',
+banco: '',
+montoRecibo: 0,
+montoMano: 0
+};
+
+let currentStep = 1;
+
+function selectOption(element, field, value) {
+// Remove selected from siblings
+const parent = element.parentElement;
+const siblings = parent.querySelectorAll('.option-card');
+siblings.forEach(sib => sib.classList.remove('selected'));
+
+// Add selected to clicked
+element.classList.add('selected');
+
+// Save data
+surveyData[field] = value;
+
+// Enable next button
+document.getElementById(`btn-step-${currentStep}`).disabled = false;
+}
+
+function updateMontoRecibo(value) {
+surveyData.montoRecibo = parseFloat(value) || 0;
+
+const display = document.getElementById('monto-display');
+const formateado = document.getElementById('monto-formateado');
+
+if (surveyData.montoRecibo > 0) {
+display.style.display = 'block';
+formateado.textContent = '$' + surveyData.montoRecibo.toLocaleString('es-AR');
+document.getElementById('btn-step-3').disabled = false;
+} else {
+display.style.display = 'none';
+document.getElementById('btn-step-3').disabled = true;
+}
+}
+
+function updateMontoMano(value) {
+surveyData.montoMano = parseFloat(value) || 0;
+
+const display = document.getElementById('mano-display');
+const formateado = document.getElementById('mano-formateado');
+
+if (surveyData.montoMano > 0) {
+display.style.display = 'block';
+formateado.textContent = '$' + surveyData.montoMano.toLocaleString('es-AR');
+document.getElementById('btn-step-4').disabled = false;
+} else {
+display.style.display = 'none';
+document.getElementById('btn-step-4').disabled = true;
+}
+}
+
+function nextStep(step) {
+// Hide current step
+document.getElementById(`step-${step}`).classList.remove('active');
+
+// Update progress dots
+document.getElementById(`dot-${step}`).classList.remove('active');
+document.getElementById(`dot-${step}`).classList.add('completed');
+
+// Show next step
+currentStep = step + 1;
+document.getElementById(`step-${currentStep}`).classList.add('active');
+document.getElementById(`dot-${currentStep}`).classList.add('active');
+}
+
+function prevStep(step) {
+// Hide current step
+document.getElementById(`step-${step}`).classList.remove('active');
+
+// Update progress dots
+document.getElementById(`dot-${step}`).classList.remove('active');
+
+// Show previous step
+currentStep = step - 1;
+document.getElementById(`step-${currentStep}`).classList.add('active');
+document.getElementById(`dot-${currentStep}`).classList.remove('completed');
+document.getElementById(`dot-${currentStep}`).classList.add('active');
+}
+
+function finishSurvey() {
+// Hide step 4
+document.getElementById('step-4').clas
 ...
