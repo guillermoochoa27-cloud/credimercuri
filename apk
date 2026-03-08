@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credimercuri - Préstamos en Villa Dolores | Kit Completo Facebook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --fb-blue: #1877f2;
+            --fb-dark: #1c1e21;
+            --fb-gray: #65676b;
+            --fb-light: #f0f2f5;
+            --fb-white: #ffffff;
+            --whatsapp: #25d366;
+            --credimercuri: #1a237e;
+            --accent: #00bfa5;
+            --gold: #ffd600;
+            --urgent: #ff5722;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Inter', sans-serif;
+            background: var(--fb-light);
+            color: var(--fb-dark);
+            line-height: 1.6;
+        }
+
+        /* Facebook Header */
+        .fb-header {
+            background: var(--fb-white);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 16px;
+        }
+
+        .fb-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fb-logo {
+            font-size: 28px;
+            color: var(--fb-blue);
+            font-weight: 700;
+        }
+
+        .fb-search {
+            flex: 1;
+            max-width: 300px;
+            margin: 0 16px;
+        }
+
+        .fb-search input {
+            width: 100%;
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: none;
+            background: var(--fb-light);
+            font-size: 15px;
+        }
+
+        .fb-icons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .fb-icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--fb-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Main Container */
+        .fb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 360px 1fr 300px;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        @media (max-width: 1200px) {
+            .fb-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar-left, .sidebar-right {
+                display: none;
+            }
+        }
+
+        /* Cover Section */
+        .cover-section {
+            background: var(--fb-white);
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .cover-photo {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--credimercuri) 0%, #0d1642 50%, var(--urgent) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cover-photo::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .cover-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .cover-content h1 {
+            font-size: 42px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .cover-content p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 12px;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .cover-buttons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .cover-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background: var(--fb-blue);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.9);
+            color: var(--fb-dark);
+        }
+
+        /* Profile Info */
+        .profile-info {
+            padding: 0 24px 24px;
+            position: relative;
+        }
+
+        .profile-pic-container {
+            margin-top: -50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-pic {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 4px solid white;
+            background: linear-gradient(135deg, var(--credimercuri), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 35px;
+            height: 35px;
+            background: var(--fb-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            border: 3px solid white;
+        }
+
+        .profile-details {
+            margin-top: 16px;
+        }
+
+        .profile-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--fb-dark);
+        }
+
+        .profile-category {
+            color: var(--fb-gray);
+            font-size: 15px;
+            margin-top: 4px;
+        }
+
+        .profile-address {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            color: var(--fb-gray);
+            font-size: 15px;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 12px;
+            color: var(--fb-gray);
+            font-size: 15px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 15px;
+            transition: transform 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: white;
+        }
+
+        .btn-urgent {
+            background: var(--urgent);
+            color: white;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255,87,34,0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(255,87,34,0); }
+        }
+
+        .btn-message {
+            background: var(--fb-light);
+            color: var(--fb-dark);
+        }
+
+        /* Navigation Tabs */
+        .profile-tabs {
+            display: flex;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        .tab {
+            padding: 16px;
+            font-weight: 600;
+            color: var(--fb-blue);
+            border-bottom: 3px solid var(--fb-blue);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .tab-inactive {
+            color: var(--fb-gray);
+            border-bottom: 3px solid transparent;
+        }
+
+        /* Feed Section */
+        .feed-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Create Post */
+        .create-post {
+            background: var(--fb-white);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .post-input {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--credimercuri), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .post-input-field {
+            flex: 1;
+            background: var(--fb-light);
+            border-radius: 20px;
+            padding: 12px 16px;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .post-actions {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #ddd;
+            padding-top: 12px;
+        }
+
+        .post-action {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--fb-gray);
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .post-action:hover {
+            background: var(--fb-light);
+        }
+
+        /* Post Card */
+        .post-card {
+            background: var(--fb-white);
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .post-header {
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        .post-author {
+            display: flex;
+            gap: 12px;
+        }
+
+        .author-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--fb-dark);
+        }
+
+        .author-info span {
+            font-size: 13px;
+            color: var(--fb-gray);
+        }
+
+        .post-content {
+            padding: 0 16px 16px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .post-content p {
+            margin-bottom: 12px;
+        }
+
+        .post-content strong {
+            color: var(--credimercuri);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border-left: 4px solid var(--gold);
+            padding: 16px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .urgent-box {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            border-left: 4px solid var(--urgent);
+            padding: 16px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--credimercuri), var(--urgent));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .post-image small {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .post-stats {
+            padding: 12px 16px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            color: var(--fb-gray);
+            font-size: 15px;
+        }
+
+        .post-buttons {
+            display: flex;
+            padding: 4px 16px;
+        }
+
+        .post-btn {
+            flex: 1;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: var(--fb-gray);
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .post-btn:hover {
+            background: var(--fb-light);
+        }
+
+        /* Sidebar Left */
+        .sidebar-left {
+            position: sticky;
+            top: 76px;
+            height: fit-content;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+
+        .menu-item:hover {
+            background: var(--fb-white);
+        }
+
+        .menu-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--fb-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        /* Sidebar Right */
+        .sidebar-right {
+            position: sticky;
+            top: 76px;
+            height: fit-content;
+        }
+
+        .sponsored {
+            background: var(--fb-white);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .sponsored h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--fb-gray);
+        }
+
+        .ad-card {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .ad-card:hover {
+            background: var(--fb-light);
+        }
+
+        .ad-image {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--credimercuri), var(--gold));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+
+        .ad-info h5 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .ad-info p {
+            font-size: 13px;
+            color: var(--fb-gray);
+            line-height: 1.4;
+        }
+
+        .ad-info a {
+            color: var(--fb-gray);
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        /* Content Tools Section */
+        .content-tools {
+            background: var(--fb-white);
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 20px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .tools-header {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--fb-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stats-dashboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, var(--credimercuri), var(--accent));
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .stat-box p {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        .template-section {
+            margin-bottom: 24px;
+        }
+
+        .template-section h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--credimercuri);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--fb-light);
+        }
+
+        .template-card {
+            background: var(--fb-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 4px solid var(--credimercuri);
+            position: relative;
+        }
+
+        .template-card:hover {
+            background: #e4e6eb;
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .template-card.urgent {
+            border-left-color: var(--urgent);
+            background: #fff3e0;
+        }
+
+        .template-card.gold {
+            border-left-color: var(--gold);
+            background: #fffde7;
+        }
+
+        .template-label {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .label-educational { background: #e3f2fd; color: #1565c0; }
+        .label-promo { background: #fce4ec; color: #c2185b; }
+        .label-urgent { background: #ffebee; color: #c62828; }
+        .label-social { background: #f3e5f5; color: #7b1fa2; }
+        .label-service { background: #e8f5e9; color: #2e7d32; }
+
+        .template-card h5 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--fb-dark);
+        }
+
+        .template-card p {
+            font-size: 15px;
+            color: var(--fb-gray);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .template-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--fb-gray);
+            margin-top: 12px;
+        }
+
+        .copy-btn {
+            background: var(--fb-blue);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #166fe5;
+            transform: scale(1.05);
+        }
+
+        /* Calendar Section */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .calendar-day {
+            background: var(--fb-light);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            min-height: 100px;
+        }
+
+        .calendar-day.active {
+            background: linear-gradient(135deg, var(--credimercuri), var(--accent));
+            color: white;
+        }
+
+        .calendar-day h6 {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .calendar-day p {
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--whatsapp);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+            cursor: pointer;
+            z-index: 9999;
+            animation: pulse-whatsapp 2s infinite;
+            text-decoration: none;
+        }
+
+        @keyframes pulse-whatsapp {
+            0%, 100% { transform: scale(1); box-shadow: 0 6px 30px rgba(37,211,102,0.5); }
+            50% { transform: scale(1.1); box-shadow: 0 8px 40px rgba(37,211,102,0.7); }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--whatsapp), #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            margin: 0 auto 24px;
+            color: white;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .modal h3 {
+            font-size: 28px;
+            color: var(--fb-dark);
+            margin-bottom: 16px;
+        }
+
+        .modal p {
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .modal-location {
+            background: var(--fb-light);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .modal-location strong {
+            color: var(--credimercuri);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-modal-primary {
+            flex: 1;
+            background: var(--whatsapp);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-modal-secondary {
+            flex: 1;
+            background: #f0f0f0;
+            color: #666;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .fb-container {
+                padding: 0;
+                gap: 0;
+            }
+            
+            .cover-photo {
+                height: 250px;
+            }
+            
+            .cover-content h1 {
+                font-size: 28px;
+            }
+            
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+                font-size: 50px;
+            }
+            
+            .profile-name {
+                font-size: 24px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .stats-dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .calendar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Facebook Header -->
+    <header class="fb-header">
+        <nav class="fb-nav">
+            <div class="fb-logo">facebook</div>
+            <div class="fb-search">
+                <input type="text" placeholder="Buscar en Credimercuri...">
+            </div>
+            <div class="fb-icons">
+                <div class="fb-icon-btn">🏠</div>
+                <div class="fb-icon-btn">📺</div>
+                <div class="fb-icon-btn">🏪</div>
+                <div class="fb-icon-btn">👥</div>
+                <div class="fb-icon-btn">🎮</div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="fb-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar-left">
+            <div class="menu-item">
+                <div class="menu-icon" style="background: linear-gradient(135deg, var(--credimercuri), var(--gold)); color: white;">💼</div>
+                <span>Credimercuri</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">👴</div>
+                <span>Jubilados</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">👵</div>
+                <span>Pensionados</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">📝</div>
+                <span>Pensiones No Contributivas</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">💼</div>
+                <span>Empleados</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">💰</div>
+                <span>Simulador de Préstamos</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">📍</div>
+                <span>Ubicación</span>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon">💬</div>
+                <span>WhatsApp Directo</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Cover Section -->
+            <div class="cover-section">
+                <div class="cover-photo">
+                    <div class="cover-content">
+                        <h1>CREDIMERCURI</h1>
+                        <p>Préstamos Personales en Villa Dolores</p>
+                        <p style="font-size: 16px; margin-top: 8px;">👴 Jubilados 👵 Pensionados 📝 Pensiones No Contributivas 💼 Empleados</p>
+                        <span class="cover-badge">✓ Aprobación en 24hs</span>
+                    </div>
+                    <div class="cover-buttons">
+                        <button class="cover-btn btn-secondary">📷 Editar foto</button>
+                    </div>
+                </div>
+                
+                <div class="profile-info">
+                    <div class="profile-pic-container">
+                        <div class="profile-pic">💰</div>
+                        <div class="verified-badge">✓</div>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <h1 class="profile-name">Credimercuri Préstamos</h1>
+                        <p class="profile-category">Servicio financiero • Asesor independiente</p>
+                        
+                        <div class="profile-address">
+                            <span>📍</span>
+                            <span><strong>Hipólito Yrigoyen 655</strong> • Villa Dolores, Córdoba</span>
+                        </div>
+
+                        <div class="profile-stats">
+                            <span>👥 2.4K seguidores</span>
+                            <span>👥 1.8K siguen esta página</span>
+                            <span>⭐ 4.9 (127 opiniones)</span>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="action-btn btn-whatsapp" onclick="openWhatsApp()">
+                                <span>💬</span> WhatsApp
+                            </button>
+                            <button class="action-btn btn-urgent" onclick="openWhatsApp('Necesito un préstamo urgente')">
+                                <span>⚡</span> Préstamo Express
+                            </button>
+                            <button class="action-btn btn-message">
+                                <span>📍</span> Cómo llegar
+                            </button>
+                        </div>
+
+                        <div class="profile-tabs">
+                            <div class="tab">Publicaciones</div>
+                            <div class="tab tab-inactive">Información</div>
+                            <div class="tab tab-inactive">Préstamos</div>
+                            <div class="tab tab-inactive">Opiniones</div>
+                            <div class="tab tab-inactive">Fotos</div>
+                            <div class="tab tab-inactive">Más</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feed -->
+            <div class="feed-section">
+                <!-- Create Post -->
+                <div class="create-post">
+                    <div class="post-input">
+                        <div class="post-avatar">💰</div>
+                        <input type="text" class="post-input-field" placeholder="¿Qué necesitás financiar hoy?">
+                    </div>
+                    <div class="post-actions">
+                        <div class="post-action">
+                            <span>📹</span> En vivo
+                        </div>
+                        <div class="post-action">
+                            <span>📷</span> Foto/video
+                        </div>
+                        <div class="post-action">
+                            <span>🏷️</span> Oferta
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 1: Servicio Principal -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="post-avatar">💰</div>
+                            <div class="author-info">
+                                <h4>Credimercuri Préstamos</h4>
+                                <span>2 h • 📍 Villa Dolores • 🌎</span>
+                            </div>
+                        </div>
+                        <span style="color: var(--fb-gray); cursor: pointer;">⋯</span>
+                    </div>
+                    <div class="post-content">
+                        <p>💰 <strong>¿NECESITÁS PLATA URGENTE?</strong></p>
+                        <p>En <strong>Credimercuri</strong> te damos la mano. Préstamos personales para:</p>
+                        <div class="highlight-box">
+                            <p>✅ <strong>JUBILADOS</strong> - Hasta $500.000 en cuotas fijas<br>
+                            ✅ <strong>PENSIONADOS</strong> - Aprobación inmediata<br>
+                            ✅ <strong>PENSIONES NO CONTRIBUTIVAS</strong> - Sin rechazos<br>
+                            ✅ <strong>EMPLEADOS</strong> - Con o sin recibo de sueldo</p>
+                        </div>
+                        <p>📍 <strong>Te esperamos en Hipólito Yrigoyen 655, Villa Dolores</strong></p>
+                        <p>⏰ <strong>Lunes a Viernes de 9:00 a 18:00</strong></p>
+                        <p>📱 <strong>WhatsApp: +54 9 3544 31-3118</strong> (respondemos al instante)</p>
+                        <p style="color: var(--urgent); font-weight: 700;">🔥 PROMO ESPECIAL: Sin intereses el primer mes para jubilados que tramiten esta semana</p>
+                    </div>
+                    <div class="post-image" style="background: linear-gradient(135deg, #1a237e, #ff5722);">
+                        🏦 PRÉSTAMOS EN 24HS<br>
+                        <small>Villa Dolores • Hipólito Yrigoyen 655</small>
+                    </div>
+                    <div class="post-stats">
+                        <span>👍 156 ❤️ 45 😮 23</span>
+                        <span>89 comentarios • 34 veces compartido</span>
+                    </div>
+                    <div class="post-buttons">
+                        <div class="post-btn">👍 Me gusta</div>
+                        <div class="post-btn">💬 Comentar</div>
+                        <div class="post-btn">↗️ Compartir</div>
+                        <div class="post-btn" onclick="openWhatsApp()">📱 WhatsApp</div>
+                    </div>
+                </article>
+
+                <!-- Post 2: Específico Jubilados -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="post-avatar">👴</div>
+                            <div class="author-info">
+                                <h4>Credimercuri - Especial Jubilados</h4>
+                                <span>5 h • 🌎</span>
+                            </div>
+                        </div>
+                        <span style="color: var(--fb-gray); cursor: pointer;">⋯</span>
+                    </div>
+                    <div class="post-content">
+                        <p>👴 <strong>ATENCIÓN JUBILADOS DE VILLA DOLORES Y ZONA</strong></p>
+                        <p>¿Te quedaste corto con la jubilación? ¿Necesitás arreglar la casa, pagar un remedio o ayudar a un familiar?</p>
+                        <div class="urgent-box">
+                            <p><strong>✓ NO te pedimos garantías de terceros</strong><br>
+                            <strong>✓ NO necesitás cuenta bancaria</strong><br>
+                            <strong>✓ SÍ aceptamos morosos de otros bancos</strong><br>
+                            <strong>✓ Cuotas que no superan el 30% de tu jubilación</strong></p>
+                        </div>
+                        <p>💳 <strong>Solo necesitás:</strong> DNI, último recibo de jubilación y servicio a tu nombre</p>
+                        <p>🚗 <strong>Atención preferencial</strong> para adultos mayores - Tenemos rampa de acceso</p>
+                        <p>📍 <strong>Hipólito Yrigoyen 655, Villa Dolores</strong> - A 2 cuadras de la plaza principal</p>
+                    </div>
+                    <div class="post-image" style="background: linear-gradient(135deg, #4caf50, #1a237e);">
+                        👴 JUBILADOS<br>
+                        <small>Préstamos con beneficios exclusivos</small>
+                    </div>
+                    <div class="post-stats">
+                        <span>👍 234 ❤️ 67 👏 45</span>
+                        <span>56 comentarios • 78 veces compartido</span>
+                    </div>
+                    <div class="post-buttons">
+                        <div class="post-btn">👍 Me gusta</div>
+                        <div class="post-btn">💬 Comentar</div>
+                        <div class="post-btn">↗️ Compartir</div>
+                        <div class="post-btn" onclick="openWhatsApp('Soy jubilado y necesito información')">📱 Consultar</div>
+                    </div>
+                </article>
+
+                <!-- Post 3: Pensiones No Contributivas -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="post-avatar">📝</div>
+                            <div class="author-info">
+                                <h4>Credimercuri - Pensión No Contributiva</h4>
+                                <span>1 d • 🌎</span>
+                            </div>
+                        </div>
+                        <span style="color: var(--fb-gray); cursor: pointer;">⋯</span>
+                    </div>
+                    <div class="post-content">
+                        <p>📝 <strong>¿COBRÁS PENSIÓN NO CONTRIBUTIVA Y TE DIERON "NO" EN TODOS LADOS?</strong></p>
+                        <p>En <strong>Credimercuri</strong> decimos <strong>SÍ</strong>.</p>
+                        <div class="highlight-box">
+                            <p>Somos de los pocos en Villa Dolores que aprobamos préstamos para:</p>
+                            <p>✅ Madres de 7 hijos<br>
+                            ✅ Pensiones por invalidez<br>
+                            ✅ Pensiones veteranos de guerra<br>
+                            ✅ Pensiones graciables</p>
+                        </div>
+                        <p>💰 <strong>Montos desde $20.000 hasta $200.000</strong></p>
+                        <p>📆 <strong>Plazos de 3 a 24 meses</strong></p>
+                        <p>🤝 <strong>Entendemos tu situación y buscamos la mejor solución</strong></p>
+                        <p>📱 <strong>WhatsApp: +54 9 3544 31-3118</strong> (consulta sin compromiso)</p>
+                    </div>
+                    <div class="post-image" style="background: linear-gradient(135deg, #9c27b0, #1a237e);">
+                        📝 PENSIONES NO CONTRIBUTIVAS<br>
+                        <small>Aprobamos donde otros no</small>
+                    </div>
+                    <div class="post-stats">
+                        <span>👍 189 ❤️ 56 😢 12 (historias de éxito)</span>
+                        <span>67 comentarios • 45 veces compartido</span>
+                    </div>
+                    <div class="post-buttons">
+                        <div class="post-btn">👍 Me gusta</div>
+                        <div class="post-btn">💬 Comentar</div>
+                        <div class="post-btn">↗️ Compartir</div>
+                        <div class="post-btn" onclick="openWhatsApp('Cobro pensión no contributiva')">📱 Info</div>
+                    </div>
+                </article>
+
+                <!-- Post 4: Empleados -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="post-avatar">💼</div>
+                            <div class="author-info">
+                                <h4>Credimercuri - Empleados</h4>
+                                <span>2 d • 🌎</span>
+                            </div>
+                        </div>
+                        <span style="color: var(--fb-gray); cursor: pointer;">⋯</span>
+                    </div>
+                    <div class="post-content">
+                        <p>💼 <strong>¿TRABAJÁS EN RELACIÓN DE DEPENDENCIA Y NECESITÁS UN ADELANTO?</strong></p>
+                        <p>No le pidas plata prestada a tu jefe. Vení a <strong>Credimercuri</strong>.</p>
+                        <p>✅ <strong>Con recibo de sueldo:</strong> Hasta 3 sueldos de préstamo<br>
+                        ✅ <strong>Sin recibo (monotributo):</strong> También tenemos opciones<br>
+                        ✅ <strong>Descontamos del sueldo:</strong> O pagás por transferencia/caja<br>
+                        ✅ <strong>Aprobación en el día:</strong> Si venís antes de las 12hs, tenés el plata la misma tarde</p>
+                        <div class="urgent-box">
+                            <p>🎁 <strong>BENEFICIO ESPECIAL EMPLEADOS:</strong><br>
+                            Si traés a un compañero de trabajo y ambos toman préstamo, <strong>10% de descuento en intereses para ambos</strong></p>
+                        </div>
+                        <p>📍 <strong>Hipólito Yrigoyen 655, Villa Dolores</strong> - Frente a la farmacia central</p>
+                    </div>
+                    <div class="post-image" style="background: linear-gradient(135deg, #ff9800, #1a237e);">
+                        💼 EMPLEADOS<br>
+                        <small>Tu sueldo multiplicado</small>
+                    </div>
+                    <div class="post-stats">
+                        <span>👍 145 ❤️ 34 🔥 23</span>
+                        <span>34 comentarios • 23 veces compartido</span>
+                    </div>
+                    <div class="post-buttons">
+                        <div class="post-btn">👍 Me gusta</div>
+                        <div class="post-btn">💬 Comentar</div>
+                        <div class="post-btn">↗️ Compartir</div>
+                        <div class="post-btn" onclick="openWhatsApp('Soy empleado en relación de dependencia')">📱 Cotizar</div>
+                    </div>
+                </article>
+
+                <!-- Post 5: Testimonio -->
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="post-avatar" style="background: #4caf50;">MR</div>
+                            <div class="author-info">
+                                <h4>María R. - Cliente satisfecha</h4>
+                                <span>3 d • ⭐ Recomendación • 🌎</span>
+                            </div>
+                        </div>
+                        <span style="color: var(--fb-gray); cursor: pointer;">⋯</span>
+                    </div>
+                    <div class="post-content">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p><em>"Soy jubilada y en el banco me rechazaron por 'edad'. En Credimercuri me atendieron con respeto, me explicaron todo claro y en 2 días tenía la plata en mi mano. Me salvó para pagar una operación que necesitaba urgente. Hipólito Yrigoyen 655, no se olviden."</em></p>
+                        <p>— <strong>María R., 68 años, Villa Dolores</strong></p>
+                        <p style="color: var(--credimercuri); font-weight: 600;">💬 ¿Vos también necesitás ayuda? Escribinos al WhatsApp +54 9 3544 31-3118</p>
+                    </div>
+                    <div class="post-stats">
+                        <span>👍 456 ❤️ 123 😍 67</span>
+                        <span>89 comentarios • 156 veces compartido</span>
+                    </div>
+                    <div class="post-buttons">
+                        <div class="post-btn">👍 Me gusta</div>
+                        <div class="post-btn">💬 Comentar</div>
+                        <div class="post-btn">↗️ Compartir</div>
+                        <div class="post-btn">❤️ Agradecer</div>
+                    </div>
+                </article>
+
+                <!-- CONTENT GENERATOR TOOLS -->
+                <div class="content-tools">
+                    <h3 class="tools-header">🛠️ KIT COMPLETO - GENERADOR DE CONTENIDO</h3>
+                    
+                    <!-- Stats -->
+                    <div class="stats-dashboard">
+                        <div class="stat-box">
+                            <h3>2.4K</h3>
+                            <p>Alcance semanal</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>12.5%</h3>
+                            <p>Engagement</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>89</h3>
+                            <p>Leads WhatsApp</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>67</h3>
+                            <p>Préstamos otorgados</p>
+                        </div>
+                    </div>
+
+                    <!-- Templates -->
+                    <div class="template-section">
+                        <h4>📋 TEMPLATES DE PUBLICACIONES (Click para copiar)</h4>
+
+                        <div class="template-card urgent" onclick="copyText(this)">
+                            <span class="template-label label-urgent">Urgente</span>
+                            <h5>🔥 PRÉSTAMO EXPRESS 24HS</h5>
+                            <p>¿Necesitás plata HOY? En Credimercuri aprobamos en 24hs. Jubilados, pensionados, empleados. Solo DNI y último recibo. 📍 Hipólito Yrigoyen 655, Villa Dolores. 💬 WhatsApp +54 9 3544 31-3118</p>
+                            <div class="template-meta">
+                                <span>📅 Usar: Lunes/Martes</span>
+                                <span>🎯 Objetivo: Urgencia</span>
+                            </div>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card" onclick="copyText(this)">
+                            <span class="template-label label-educational">Educativo</span>
+                            <h5>💡 ¿CÓMO ELEGIR UN PRÉSTAMO SEGURO?</h5>
+                            <p>3 consejos antes de firmar: 1) Verificá que tengan local físico (nosotros estamos en Hipólito Yrigoyen 655). 2) Que te expliquen TODAS las cuotas, no solo la primera. 3) Que no te pidan dinero anticipado. En Credimercuri cumplimos con todo. WhatsApp +54 9 3544 31-3118</p>
+                            <div class="template-meta">
+                                <span>📅 Usar: Miércoles</span>
+                                <span>🎯 Objetivo: Confianza</span>
+                            </div>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card gold" onclick="copyText(this)">
+                            <span class="template-label label-promo">Promoción</span>
+                            <h5>🎁 PROMO JUBILADOS ESTA SEMANA</h5>
+                            <p>Jubilados de Villa Dolores: Si venís esta semana, te bonificamos los gastos de gestión (ahorrás $5.000). Además, cuotas más bajas si traés a un compañero de jubilación. 📍 Hipólito Yrigoyen 655. ⏰ 9 a 18hs. WhatsApp +54 9 3544 31-3118</p>
+                            <div class="template-meta">
+                                <span>📅 Usar: Jueves/Viernes</span>
+                                <span>🎯 Objetivo: Conversión</span>
+                            </div>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card" onclick="copyText(this)">
+                            <span class="template-label label-social">Social Proof</span>
+                            <h5>⭐ TESTIMONIO REAL DE CLIENTE</h5>
+                            <p>"[Nombre] nos escribió: 'Gracias Credimercuri por confiar en mí cuando mi banco dijo que no. Hoy pude arreglar el baño de mi mamá pensionada.'" Historias como esta nos motivan. 📍 Hipólito Yrigoyen 655, Villa Dolores. WhatsApp +54 9 3544 31-3118</p>
+                            <div class="template-meta">
+                                <span>📅 Usar: Sábado</span>
+                                <span>🎯 Objetivo: Credibilidad</span>
+                            </div>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card" onclick="copyText(this)">
+                            <span class="template-label label-service">Servicio</span>
+                            <h5>📝 ¿PENSIÓN NO CONTRIBUTIVA? SÍ, APROBAMOS</h5>
+                            <p>Somos de los pocos en Villa Dolores que damos préstamos a quienes cobran pensión no contributiva. Madres de 7 hijos, invalidez, veteranos: TODOS tienen opción en Credimercuri. 📍 Hipólito Yrigoyen 655. WhatsApp +54 9 3544 31-3118</p>
+                            <div class="template-meta">
+                                <span>📅 Usar: Domingo</span>
+                                <span>🎯 Objetivo: Nicho específico</span>
+                            </div>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                    </div>
+
+                    <!-- Calendar -->
+                    <div class="template-section">
+                        <h4>📅 CALENDARIO EDITORIAL SEMANAL</h4>
+                        <div class="calendar-grid">
+                            <div class="calendar-day active">
+                                <h6>Lunes</h6>
+                                <p>🔥<br>Post URGENCIA<br>"Necesitás plata HOY"</p>
+                            </div>
+                            <div class="calendar-day">
+                                <h6>Martes</h6>
+                                <p>👴<br>JUBILADOS<br>Beneficios especiales</p>
+                            </div>
+                            <div class="calendar-day">
+                                <h6>Miércoles</h6>
+                                <p>💡<br>EDUCATIVO<br>Consejos financieros</p>
+                            </div>
+                            <div class="calendar-day active">
+                                <h6>Jueves</h6>
+                                <p>🎁<br>PROMO<br>Descuento especial</p>
+                            </div>
+                            <div class="calendar-day">
+                                <h6>Viernes</h6>
+                                <p>💼<br>EMPLEADOS<br>Fin de semana</p>
+                            </div>
+                            <div class="calendar-day">
+                                <h6>Sábado</h6>
+                                <p>⭐<br>TESTIMONIO<br>Cliente feliz</p>
+                            </div>
+                            <div class="calendar-day">
+                                <h6>Domingo</h6>
+                                <p>📝<br>PENSIONES<br>No contributivas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Auto-Responses -->
+                    <div class="template-section">
+                        <h4>💬 RESPUESTAS AUTOMÁTICAS (Configurar en Facebook)</h4>
+                        
+                        <div class="template-card" onclick="copyText(this)">
+                            <h5>🤖 Respuesta a comentario "¿Cuánto me prestan?"</h5>
+                            <p>Hola [nombre]! Depende de tu situación: Jubilados hasta $500k, empleados hasta 3 sueldos, pensiones no contributivas hasta $200k. Para darte un número exacto, ¿podés escribirme al WhatsApp? +54 9 3544 31-3118 Así vemos tu caso particular. Saludos!</p>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card" onclick="copyText(this)">
+                            <h5>🤖 Respuesta a comentario "¿Dónde quedan?"</h5>
+                            <p>Hola! Estamos en Hipólito Yrigoyen 655, Villa Dolores, Córdoba. A 2 cuadras de la plaza principal, frente a la farmacia central. 📍 Si querés, agendamos para que no esperes. Escribime al WhatsApp +54 9 3544 31-3118</p>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card" onclick="copyText(this)">
+                            <h5>🤖 Respuesta a comentario "¿Necesito garante?"</h5>
+                            <p>Hola [nombre]! En Credimercuri NO pedimos garantes para jubilados, pensionados y empleados con recibo. Solo necesitás DNI, último recibo y un servicio a tu nombre. Consultá sin compromiso al WhatsApp +54 9 3544 31-3118</p>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card" onclick="copyText(this)">
+                            <h5>🤖 Mensaje privado automático (Away Message)</h5>
+                            <p>¡Hola! Gracias por escribir a Credimercuri. En este momento estoy atendiendo en el local de Hipólito Yrigoyen 655, pero te respondo al toque. Si es urgente, llamame al mismo número o escribime por WhatsApp +54 9 3544 31-3118. Horario: Lun-Vie 9-18hs.</p>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                    </div>
+
+                    <!-- Ads Templates -->
+                    <div class="template-section">
+                        <h4>📢 TEXTOS PARA ANUNCIOS PAGOS (Facebook Ads)</h4>
+                        
+                        <div class="template-card urgent" onclick="copyText(this)">
+                            <span class="template-label label-promo">Ad - Conversión</span>
+                            <h5>🎯 ANUNCIO: "Préstamo en 24hs"</h5>
+                            <p><strong>Texto principal:</strong> ¿Te rechazaron en el banco? En Credimercuri decimos SÍ. Jubilados, pensionados, empleados. Aprobación en 24hs. Villa Dolores.</p>
+                            <p><strong>Título:</strong> Préstamos Personales - Aprobación Garantizada</p>
+                            <p><strong>Descripción:</strong> Hipólito Yrigoyen 655. WhatsApp +54 9 3544 31-3118</p>
+                            <p><strong>CTA:</strong> Enviar mensaje de WhatsApp</p>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card" onclick="copyText(this)">
+                            <span class="template-label label-educational">Ad - Tráfico</span>
+                            <h5>📍 ANUNCIO: "Local físico Villa Dolores"</h5>
+                            <p><strong>Texto principal:</strong> No confíes en prestamistas online desconocidos. Credimercuri tiene local físico en Hipólito Yrigoyen 655, Villa Dolores. Atendemos con la cara visible.</p>
+                            <p><strong>Título:</strong> Prestamista Serio en Villa Dolores</p>
+                            <p><strong>Descripción:</strong> 10 años en la zona. Conocé nuestra oficina.</p>
+                            <p><strong>CTA:</strong> Ver dirección</p>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                    </div>
+
+                    <!-- Stories/Reels Scripts -->
+                    <div class="template-section">
+                        <h4>🎥 SCRIPTS PARA STORIES/REELS</h4>
+                        
+                        <div class="template-card" onclick="copyText(this)">
+                            <h5>📱 Story 15seg: "Ubicación"</h5>
+                            <p>[Video mostrando fachada del local]<br>
+                            <strong>Voz:</strong> "Credimercuri, Hipólito Yrigoyen 655, Villa Dolores. Préstamos para jubilados y empleados."<br>
+                            <strong>Texto en pantalla:</strong> "Aprobamos en 24hs" + sticker de ubicación</p>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card" onclick="copyText(this)">
+                            <h5>🎬 Reel 30seg: "Antes/Después cliente"</h5>
+                            <p>[Foto preocupada] + [Foto sonriendo]<br>
+                            <strong>Audio:</strong> "Cuando llegó no sabía si le íbamos a aprobar. Era jubilada con deuda en otro banco. Le consolidamos todo en una cuota menor. Hoy está tranquila."<br>
+                            <strong>Texto:</strong> "María, 67 años, Villa Dolores" + "Credimercuri: Segundas oportunidades"</p>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+
+                        <div class="template-card" onclick="copyText(this)">
+                            <h5>📱 Story 10seg: "Urgencia"</h5>
+                            <p>[Texto animado]<br>
+                            "¿Necesitás plata HOY?"<br>
+                            "Aprobamos en 24hs"<br>
+                            "Jubilados ✅ Pensionados ✅ Empleados ✅"<br>
+                            "Hipólito Yrigoyen 655"<br>
+                            + Link sticker a WhatsApp</p>
+                            <button class="copy-btn">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-right">
+            <div class="sponsored">
+                <h4>📍 Ubicación</h4>
+                <div class="ad-card" onclick="window.open('https://maps.google.com/?q=Hipólito+Yrigoyen+655+Villa+Dolores')">
+                    <div class="ad-image" style="background: linear-gradient(135deg, #ff5722, #1a237e);">📍</div>
+                    <div class="ad-info">
+                        <h5>Local Credimercuri</h5>
+                        <p>Hipólito Yrigoyen 655<br>Villa Dolores, Córdoba</p>
+                        <a href="#">Ver en Google Maps →</a>
+                    </div>
+                </div>
+                <div class="ad-card" onclick="openWhatsApp()">
+                    <div class="ad-image" style="background: var(--whatsapp);">💬</div>
+                    <div class="ad-info">
+                        <h5>WhatsApp Directo</h5>
+                        <p>+54 9 3544 31-3118</p>
+                        <a href="#">Enviar mensaje →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sponsored">
+                <h4>⏰ Horario de Atención</h4>
+                <div style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                    <strong>Lunes a Viernes</strong><br>
+                    <span style="color: var(--fb-gray);">9:00 - 18:00 hs</span>
+                </div>
+                <div style="padding: 12px 0;">
+                    <strong>Sábados</strong><br>
+                    <span style="color: var(--fb-gray);">9:00 - 13:00 hs (con cita previa)</span>
+                </div>
+                <div style="margin-top: 12px; padding: 12px; background: var(--fb-light); border-radius: 8px; font-size: 13px; color: var(--fb-gray);">
+                    ⚡ Atención preferencial para adultos mayores sin turno previo
+                </div>
+            </div>
+
+            <div class="sponsored">
+                <h4>💰 Productos</h4>
+                <div class="menu-item" style="padding: 8px 0;" onclick="openWhatsApp('Soy jubilado')">
+                    <div class="menu-icon" style="background: #e8f5e9; color: #2e7d32;">👴</div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 15px;">Jubilados</div>
+                        <div style="font-size: 13px; color: var(--fb-gray);">Hasta $500.000</div>
+                    </div>
+                </div>
+                <div class="menu-item" style="padding: 8px 0;" onclick="openWhatsApp('Soy pensionado')">
+                    <div class="menu-icon" style="background: #fff3e0; color: #ef6c00;">👵</div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 15px;">Pensionados</div>
+                        <div style="font-size: 13px; color: var(--fb-gray);">Cuotas fijas garantizadas</div>
+                    </div>
+                </div>
+                <div class="menu-item" style="padding: 8px 0;" onclick="openWhatsApp('Cobro pensión no contributiva')">
+                    <div class="menu-icon" style="background: #f3e5f5; color: #7b1fa2;">📝</div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 15px;">Pensiones No Contributivas</div>
+                        <div style="font-size: 13px; color: var(--fb-gray);">Aprobamos donde otros no</div>
+                    </div>
+                </div>
+                <div class="menu-item" style="padding: 8px 0;" onclick="openWhatsApp('Soy empleado')">
+                    <div class="menu-icon" style="background: #e3f2fd; color: #1565c0;">💼</div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 15px;">Empleados</div>
+                        <div style="font-size: 13px; color: var(--fb-gray);">Hasta 3 sueldos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sponsored">
+                <h4>⭐ Opiniones Recientes</h4>
+                <div style="padding: 12px; background: var(--fb-light); border-radius: 8px; margin-bottom: 12px;">
+                    <div style="color: var(--gold); margin-bottom: 4px;">★★★★★</div>
+                    <p style="font-size: 14px; margin-bottom: 8px;">"Rápidos y serios. En 2 días tenía la plata"</p>
+                    <span style="font-size: 13px; color: var(--fb-gray);">— Carlos M., Jubilado</span>
+                </div>
+                <div style="padding: 12px; background: var(--fb-light); border-radius: 8px;">
+                    <div style="color: var(--gold); margin-bottom: 4px;">★★★★★</div>
+                    <p style="font-size: 14px; margin-bottom: 8px;">"Me dieron chance siendo pensionada no contributiva"</p>
+                    <span style="font-size: 13px; color: var(--fb-gray);">— Rosa P., Madre de 7 hijos</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/543544313118?text=Hola%20Credimercuri,%20vi%20tu%20página%20de%20Facebook%20y%20quiero%20información%20sobre%20préstamos" class="whatsapp-float" target="_blank" title="Chatear ahora">
+        💬
+    </a>
+
+    <!-- Modal Bienvenida -->
+    <div class="modal" id="welcomeModal">
+        <div class="modal-content">
+            <div class="modal-icon">💰</div>
+            <h3>¿Necesitás un préstamo?</h3>
+            <p>En Credimercuri aprobamos en 24hs. Jubilados, pensionados, empleados y pensiones no contributivas.</p>
+            <div class="modal-location">
+                <strong>📍 Hipólito Yrigoyen 655</strong>
+                Villa Dolores, Córdoba<br>
+                ⏰ Lun-Vie: 9:00 - 18:00 hs
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-modal-secondary" onclick="closeModal()">Ahora no</button>
+                <a href="https://wa.me/543544313118?text=Hola%20Credimercuri,%20necesito%20un%20préstamo" class="btn-modal-primary" target="_blank">
+                    <span>💬</span> Escribir al WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openWhatsApp(message = 'Hola Credimercuri, vi tu página de Facebook') {
+            const phone = '543544313118';
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        function copyText(element) {
+            const text = element.querySelector('p').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = element.querySelector('.copy-btn');
+                const originalText = btn.innerText;
+                btn.innerText = '¡Copiado!';
+                btn.style.background = '#00bfa5';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = '#1877f2';
+                }, 2000);
+            });
+        }
+
+        function showModal() {
+            document.getElementById('welcomeModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('welcomeModal').classList.remove('active');
+        }
+
+        // Show modal after 15 seconds
+        setTimeout(showModal, 15000);
+
+        // Close modal on outside click
+        document.getElementById('welcomeModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+
+</body>
+</html>
